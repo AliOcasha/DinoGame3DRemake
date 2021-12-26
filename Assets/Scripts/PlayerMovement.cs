@@ -6,9 +6,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform Tile;
 
     private float TileWidth;
+
+    private Rigidbody Player;
     void Start()
     {
         TileWidth = Tile.transform.localScale.x*Constants.INITIAL_PLANEWIDTH;
+        Player = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -18,6 +21,13 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetAxisRaw("Horizontal") != 0)
             {
                 transform.Translate(Input.GetAxisRaw("Horizontal")*Constants.PLAYER_SPEED*Vector3.right);
+            }
+            if(Input.GetAxisRaw("Vertical") != 0 || Input.GetButton("Jump"))
+            {
+                if (transform.position.y <= 0.5f)
+                {
+                    Player.AddForce(transform.up * 150);
+                }
             }
         } 
         else 

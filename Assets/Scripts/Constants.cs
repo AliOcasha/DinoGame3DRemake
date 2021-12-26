@@ -12,5 +12,5 @@ public class Constants : MonoBehaviour
 
     public const float PLAYER_SPEED = 0.1f;
 
-    public const float THROWBACK = 0.33f;
+    public const float THROWBACK = 0.5f;
 }
