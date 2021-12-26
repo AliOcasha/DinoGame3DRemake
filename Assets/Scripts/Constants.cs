@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Constants : MonoBehaviour
@@ -13,4 +11,10 @@ public class Constants : MonoBehaviour
     public const float PLAYER_SPEED = 0.1f;
 
     public const float THROWBACK = 0.5f;
+
+    public const float CONTACT_HEIGHT = 0.5f;
+
+    public const float JUMP_FORCE = 100;
+
+    public const float MID_AIR_PLAYER_SPEED = 0.2f;
 }

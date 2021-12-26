@@ -20,13 +20,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if(Input.GetAxisRaw("Horizontal") != 0)
             {
-                transform.Translate(Input.GetAxisRaw("Horizontal")*Constants.PLAYER_SPEED*Vector3.right);
+                float factor = Constants.MID_AIR_PLAYER_SPEED;
+                if (transform.position.y <= Constants.CONTACT_HEIGHT)
+                {
+                    factor = 1f;
+                }
+                transform.Translate(factor*Input.GetAxisRaw("Horizontal")*Constants.PLAYER_SPEED*Vector3.right);
             }
             if(Input.GetAxisRaw("Vertical") != 0 || Input.GetButton("Jump"))
             {
-                if (transform.position.y <= 0.5f)
+                if (transform.position.y <= Constants.CONTACT_HEIGHT)
                 {
-                    Player.AddForce(transform.up * 150);
+                    Player.AddForce(transform.up * Constants.JUMP_FORCE);
                 }
             }
         } 
