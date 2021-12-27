@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class ObstacleManager : MonoBehaviour
 {
-    public Transform Player;
-    public Transform Tile;
+    /*
+    Picking a Random Prefab and the height needed for it and than spawning it on a random Position in
+    a given distance infront of the Player on the Tile
+    */
+    public Transform Player, Tile;
     public List<GameObject> ObstacleTypes;
     private float[] Heights = {-0.5f,0.5f,0.5f};
-    private float TileWidth;
-    private int Type;
-    private float Pos;
-    private int Counter;
+    private float SpawnRadius, Pos, Min, Max;
+    private int Type, Counter;
+
+    private Vector3 SpawnVector;
 
     void Update()
     {
         Counter++;
-        // every 200 Frames ca. 1.5 seconds
-        if (Counter == 200)
+        // every x Frames (100 Frames ca. 1 second)
+        if (Counter == 400)
         {
             Counter = 0;
             for (int i = 0; i < 3; i++)
             {
+                SpawnRadius = (Tile.transform.localScale.x*Constants.INITIAL_PLANEWIDTH)/2;
+                Min = -Mathf.Abs(SpawnRadius)*Constants.OBSTACLE_BOUNDARY_FACTOR;
+                Max = Mathf.Abs(SpawnRadius)*Constants.OBSTACLE_BOUNDARY_FACTOR;
+                Pos = Random.Range(Min,Max);
                 Type = Random.Range(0,3);
-                TileWidth = Tile.transform.localScale.x*Constants.INITIAL_PLANEWIDTH;
-                Pos = Random.Range(-Mathf.Abs(TileWidth/2)*Constants.BOUNDARY_FACTOR,Mathf.Abs(TileWidth/2)*Constants.BOUNDARY_FACTOR*0.9f);
-                Instantiate(ObstacleTypes[Type],new Vector3(Pos,Heights[Type],Player.transform.position.z + 30),Quaternion.identity);
+                SpawnVector = new Vector3(Pos,Heights[Type],Player.transform.position.z + Constants.OBSTACLE_RADIUS);
+                Instantiate(ObstacleTypes[Type],SpawnVector,Quaternion.identity);
             }
         }
     }

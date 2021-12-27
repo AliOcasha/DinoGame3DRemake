@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GroundManagment : MonoBehaviour
 {
+    /* Through switching between initial position and current position and
+       calculating the distants from the player the illusion of a endless Plane is created
+    */
     public List<Transform> Grounds;
-    private Vector3 InitialPos1;
-    private Vector3 InitialPos2;
-    
+    private Vector3 InitialPos1,InitialPos2;
     private float Scale;
     void Start()
     {

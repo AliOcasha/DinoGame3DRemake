@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
 {
+    /*Rotating the Directinal Light on the X-Axis lets you create a Day Night Cycle */
     // Update is called once per frame
     void Update()
     {

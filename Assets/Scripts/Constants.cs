@@ -1,4 +1,7 @@
 using UnityEngine;
+/*
+Constants used all over the project are set here
+*/
 
 public class Constants : MonoBehaviour
 {
@@ -7,6 +10,8 @@ public class Constants : MonoBehaviour
     public const float INITIAL_PLANEWIDTH = 10f;
 
     public const float BOUNDARY_FACTOR = 0.93f;
+
+    public const float OBSTACLE_BOUNDARY_FACTOR = BOUNDARY_FACTOR*0.9f;
 
     public const float PLAYER_SPEED = 0.1f;
 
@@ -19,4 +24,6 @@ public class Constants : MonoBehaviour
     public const float MID_AIR_PLAYER_SPEED = 0.2f;
 
     public const float DAY_SPEED = 0.1f;
+
+    public const float OBSTACLE_RADIUS = 30f;
 }

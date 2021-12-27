@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class GroundMovement : MonoBehaviour
 {
-    private float factor = 1;
+    /*Moving the Ground Tiles endlessly forward.
+    By Adding a Factor infront of the Mvmnt Vector the Speed can be acclerated.
+    This Factor has to be the same in the Obstacle Movement
+    */
     void FixedUpdate()
     {
-        Vector3 Mvmnt = factor * Constants.BASE_SPEED * Vector3.forward;
+        Vector3 Mvmnt = Constants.BASE_SPEED * Vector3.forward;
         transform.Translate(Mvmnt);
     }
 }

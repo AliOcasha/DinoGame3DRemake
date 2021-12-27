@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
+    /*
+    With Keyboard inputs the player can be moved when all conditions are met.
+    Conditions:
+    Moving right and left when in tile range. ELSE throwback in oppsite of player input
+    Jumping if ground contact given.
+    */
     public Transform Tile;
 
     private float TileWidth;
