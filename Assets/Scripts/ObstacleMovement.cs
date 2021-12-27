@@ -9,6 +9,7 @@ public class ObstacleMovement : MonoBehaviour
     This Factor has to be the same in the Ground Movement
     */
     private GameObject Player;
+    private bool ObstacleOverlap;
 
     void Start()
     {

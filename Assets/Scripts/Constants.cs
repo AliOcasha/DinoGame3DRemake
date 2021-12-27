@@ -5,7 +5,7 @@ Constants used all over the project are set here
 
 public class Constants : MonoBehaviour
 {
-    public const float BASE_SPEED = -0.05f;
+    public const float BASE_SPEED = -0.5f;
 
     public const float INITIAL_PLANEWIDTH = 10f;
 
@@ -23,7 +23,9 @@ public class Constants : MonoBehaviour
 
     public const float MID_AIR_PLAYER_SPEED = 0.2f;
 
-    public const float DAY_SPEED = 0.1f;
+    public const float DAY_SPEED = 0.01f;
 
-    public const float OBSTACLE_RADIUS = 30f;
+    public const float OBSTACLE_RADIUS = 50f;
+
+    public const int SPAWN_RATE = 100;
 }
