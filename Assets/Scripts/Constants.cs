@@ -17,4 +17,6 @@ public class Constants : MonoBehaviour
     public const float JUMP_FORCE = 100;
 
     public const float MID_AIR_PLAYER_SPEED = 0.2f;
+
+    public const float DAY_SPEED = 0.1f;
 }
