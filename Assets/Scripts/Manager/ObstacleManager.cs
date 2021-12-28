@@ -9,13 +9,14 @@ public class ObstacleManager : MonoBehaviour
     */
     public Transform Player, Tile;
     public List<GameObject> ObstacleTypes;
+    public GameObject Bird;
     private float[] Heights = {-0.5f,0.5f,0.5f};
     private float SpawnRadius, Pos, Min, Max, Variation;
     private int Type, Counter;
 
     private Vector3 SpawnVector;
 
-    void FixedUpdate()
+    void GenerateRandoms()
     {
         SpawnRadius = (Tile.transform.localScale.x*Constants.INITIAL_PLANEWIDTH)/2;
         Min = -Mathf.Abs(SpawnRadius)*Constants.OBSTACLE_BOUNDARY_FACTOR;
@@ -33,9 +34,15 @@ public class ObstacleManager : MonoBehaviour
             Counter = 0;
             for (int i = 0; i < 5; i++)
             {
+                GenerateRandoms();
                 SpawnVector = new Vector3(Pos,Heights[Type],Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
-                Instantiate(ObstacleTypes[Type],SpawnVector,Quaternion.identity);
-                
+                Instantiate(ObstacleTypes[Type],SpawnVector,Quaternion.identity);    
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                GenerateRandoms();
+                SpawnVector = new Vector3(Pos,5,Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
+                Instantiate(Bird,SpawnVector,Quaternion.identity);    
             }
         }
     }
