@@ -25,7 +25,7 @@ public class Constants : MonoBehaviour
 
     public const float DAY_SPEED = 0.01f;
 
-    public const float OBSTACLE_RADIUS = 50f;
+    public const float OBSTACLE_RADIUS = 100f;
 
     public const int SPAWN_RATE = 100;
 }

@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     {
         TileWidth = Tile.transform.localScale.x*Constants.INITIAL_PLANEWIDTH;
         Player = GetComponent<Rigidbody>();
-        Physics.gravity *= 1.5f;
     }
 
     void FixedUpdate()

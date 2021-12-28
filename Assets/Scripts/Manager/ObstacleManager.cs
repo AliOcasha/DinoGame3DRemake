@@ -23,13 +23,14 @@ public class ObstacleManager : MonoBehaviour
         Max = Mathf.Abs(SpawnRadius)*Constants.OBSTACLE_BOUNDARY_FACTOR;
         Pos = Random.Range(Min,Max);
         Type = Random.Range(0,3);
-        Variation = Random.Range(-2,2);
+        Variation = Random.Range(-3,3);
     }
     void Update()
     {
         Counter++;
         // every x Frames (100 Frames ca. 1 second)
         if (Counter == Constants.SPAWN_RATE)
+
         {
             Counter = 0;
             for (int i = 0; i < 5; i++)
