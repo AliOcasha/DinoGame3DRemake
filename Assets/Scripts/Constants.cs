@@ -13,6 +13,8 @@ public class Constants : MonoBehaviour
 
     public const float OBSTACLE_BOUNDARY_FACTOR = BOUNDARY_FACTOR*0.9f;
 
+    public const float BIRD_BOUNDARY_FACTOR = BOUNDARY_FACTOR*0.8f;
+
     public const float PLAYER_SPEED = 0.1f;
 
     public const float THROWBACK = 0.5f;
@@ -27,5 +29,5 @@ public class Constants : MonoBehaviour
 
     public const float OBSTACLE_RADIUS = 100f;
 
-    public const int SPAWN_RATE = 100;
+    public const int SPAWN_RATE = 150;
 }

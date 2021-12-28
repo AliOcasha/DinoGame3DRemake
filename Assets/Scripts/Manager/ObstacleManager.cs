@@ -19,8 +19,8 @@ public class ObstacleManager : MonoBehaviour
     void GenerateRandoms()
     {
         SpawnRadius = (Tile.transform.localScale.x*Constants.INITIAL_PLANEWIDTH)/2;
-        Min = -Mathf.Abs(SpawnRadius)*Constants.OBSTACLE_BOUNDARY_FACTOR;
-        Max = Mathf.Abs(SpawnRadius)*Constants.OBSTACLE_BOUNDARY_FACTOR;
+        Min = -Mathf.Abs(SpawnRadius);
+        Max = Mathf.Abs(SpawnRadius);
         Pos = Random.Range(Min,Max);
         Type = Random.Range(0,3);
         Variation = Random.Range(-3,3);
@@ -36,13 +36,17 @@ public class ObstacleManager : MonoBehaviour
             for (int i = 0; i < 5; i++)
             {
                 GenerateRandoms();
-                SpawnVector = new Vector3(Pos,Heights[Type],Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
+                SpawnVector = new Vector3(Pos*Constants.OBSTACLE_BOUNDARY_FACTOR,
+                Heights[Type],
+                Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
                 Instantiate(ObstacleTypes[Type],SpawnVector,Quaternion.identity);    
             }
             for (int i = 0; i < 3; i++)
             {
                 GenerateRandoms();
-                SpawnVector = new Vector3(Pos,5,Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
+                SpawnVector = new Vector3(Pos*Constants.BIRD_BOUNDARY_FACTOR,
+                5,
+                Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
                 Instantiate(Bird,SpawnVector,Quaternion.identity);    
             }
         }
