@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +22,7 @@ public class ObstacleManager : MonoBehaviour
         Max = Mathf.Abs(SpawnRadius)*Constants.OBSTACLE_BOUNDARY_FACTOR;
         Pos = Random.Range(Min,Max);
         Type = Random.Range(0,3);
-        Variation = Random.Range(-3,3);
+        Variation = Random.Range(-2,2);
     }
     void Update()
     {
@@ -32,7 +31,7 @@ public class ObstacleManager : MonoBehaviour
         if (Counter == Constants.SPAWN_RATE)
         {
             Counter = 0;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 SpawnVector = new Vector3(Pos,Heights[Type],Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
                 Instantiate(ObstacleTypes[Type],SpawnVector,Quaternion.identity);
