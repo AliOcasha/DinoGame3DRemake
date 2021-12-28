@@ -10,7 +10,8 @@ public class ObstacleManager : MonoBehaviour
     public Transform Player, Tile;
     public List<GameObject> ObstacleTypes;
     public GameObject Bird;
-    private float[] Heights = {-0.5f,0.5f,0.5f};
+    private float Height = -1;
+    private float BirdHeight = 5;
     private float SpawnRadius, Pos, Min, Max, Variation;
     private int Type, Counter;
 
@@ -22,7 +23,7 @@ public class ObstacleManager : MonoBehaviour
         Min = -Mathf.Abs(SpawnRadius);
         Max = Mathf.Abs(SpawnRadius);
         Pos = Random.Range(Min,Max);
-        Type = Random.Range(0,3);
+        Type = Random.Range(0,4);
         Variation = Random.Range(-3,3);
     }
     void Update()
@@ -37,7 +38,7 @@ public class ObstacleManager : MonoBehaviour
             {
                 GenerateRandoms();
                 SpawnVector = new Vector3(Pos*Constants.OBSTACLE_BOUNDARY_FACTOR,
-                Heights[Type],
+                Height,
                 Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
                 Instantiate(ObstacleTypes[Type],SpawnVector,Quaternion.identity);    
             }
@@ -45,7 +46,7 @@ public class ObstacleManager : MonoBehaviour
             {
                 GenerateRandoms();
                 SpawnVector = new Vector3(Pos*Constants.BIRD_BOUNDARY_FACTOR,
-                5,
+                BirdHeight,
                 Player.transform.position.z + Constants.OBSTACLE_RADIUS + Variation);
                 Instantiate(Bird,SpawnVector,Quaternion.identity);    
             }

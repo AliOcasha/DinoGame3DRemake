@@ -25,7 +25,7 @@ public class Constants : MonoBehaviour
 
     public const float MID_AIR_PLAYER_SPEED = 0.2f;
 
-    public const float DAY_SPEED = 0.01f;
+    public const float DAY_SPEED = 0.05f;
 
     public const float OBSTACLE_RADIUS = 100f;
 
