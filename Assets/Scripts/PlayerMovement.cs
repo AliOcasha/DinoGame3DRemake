@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody Player;
     void Start()
     {
-        TileWidth = Tile.transform.localScale.x*Constants.INITIAL_PLANEWIDTH;
+        TileWidth = 3*Constants.INITIAL_PLANEWIDTH;
         Player = GetComponent<Rigidbody>();
     }
 
@@ -39,9 +39,5 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         } 
-        else 
-        {
-            transform.Translate(-Input.GetAxisRaw("Horizontal")*Constants.THROWBACK*Vector3.right);
-        }
     }
 }

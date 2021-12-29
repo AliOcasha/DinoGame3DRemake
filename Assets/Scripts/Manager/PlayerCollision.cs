@@ -10,5 +10,9 @@ public class PlayerCollision : MonoBehaviour
             Scene Game = SceneManager.GetActiveScene();
             SceneManager.LoadScene(Game.name);
         }
+        if (collision.gameObject.tag == "Wall")
+        {
+            transform.Translate(-Input.GetAxisRaw("Horizontal")*Constants.THROWBACK*Vector3.right);
+        }
     }
 }

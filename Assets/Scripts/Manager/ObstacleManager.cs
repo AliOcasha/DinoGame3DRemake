@@ -10,6 +10,7 @@ public class ObstacleManager : MonoBehaviour
     public Transform Player, Tile;
     public List<GameObject> ObstacleTypes;
     public GameObject Bird;
+    
     private float Height = -1;
     private float BirdHeight = 5;
     private float SpawnRadius, Pos, Min, Max, Variation;
@@ -19,7 +20,7 @@ public class ObstacleManager : MonoBehaviour
 
     void GenerateRandoms()
     {
-        SpawnRadius = (Tile.transform.localScale.x*Constants.INITIAL_PLANEWIDTH)/2;
+        SpawnRadius = (3*Constants.INITIAL_PLANEWIDTH)/2;
         Min = -Mathf.Abs(SpawnRadius);
         Max = Mathf.Abs(SpawnRadius);
         Pos = Random.Range(Min,Max);
