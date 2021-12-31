@@ -4,10 +4,8 @@ public class BirdMovement : MonoBehaviour
 {
  /*Moving the Obstacles endlessly forward, until they pass a given distance of the player and get deleted.
     By Adding a Factor infront of the Mvmnt Vector the Speed can be acclerated.
-    This Factor has to be the same in the Ground Movement
     */
     private GameObject Player;
-    private bool ObstacleOverlap;
 
     void Start()
     {

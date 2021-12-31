@@ -41,7 +41,6 @@ public class GroundManagment : MonoBehaviour
             Grounds[1].transform.position = InitialPos2;
         }
 
-        Debug.Log(WallDiff1);
         if(WallDiff1.z >= 10*Scale)
         {
             Walls[0].transform.position = WallsInitialPos1;
